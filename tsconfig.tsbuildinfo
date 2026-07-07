@@ -1,1 +1,0 @@
-{"root":["./src/main.tsx","./src/router.tsx","./src/vite-env.d.ts","./src/components/longcontent.tsx","./src/components/scrollindicator.tsx","./src/components/scrolltotoponnavigate.tsx","./src/components/tabskeleton.tsx","./src/utils/delay.ts","./src/utils/scrolltotoponnavigation.ts"],"version":"5.9.3"}
