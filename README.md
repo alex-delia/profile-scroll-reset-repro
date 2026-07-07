@@ -47,22 +47,25 @@ Or use the "Open in StackBlitz" badge after publishing the repo.
 
 ## Try the workaround
 
-Append `?fix=true` to the URL (or click "Enable workaround" on the home page).
+Use the **Workaround** toggle in the top-right (or on the home page). You can turn it on and off at any time without reloading.
 
-This enables the `onBeforeNavigate` scroll-to-top helper from strats.gg, which scrolls before loaders finish so skeletons do not inherit the previous scroll offset.
+Append `?fix=true` to the URL to start with the workaround enabled.
+
+When enabled, the `onBeforeNavigate` scroll-to-top helper from strats.gg scrolls before loaders finish so skeletons do not inherit the previous scroll offset.
 
 ## Key files
 
-| File | Purpose |
-| --- | --- |
-| `src/router.tsx` | Router setup mirroring profile layout + tabs + loaders |
-| `src/components/ScrollIndicator.tsx` | Live `scrollY` readout |
-| `src/utils/scrollToTopOnNavigation.ts` | Optional workaround from strats.gg stash |
-| `src/components/TabSkeleton.tsx` | Pending state skeleton |
+| File                                   | Purpose                                                     |
+| -------------------------------------- | ----------------------------------------------------------- |
+| `src/routes/`                          | File-based routes (mirrors strats.gg profile layout + tabs) |
+| `src/router.tsx`                       | Router instance (`scrollRestoration`, pending defaults)     |
+| `src/routeTree.gen.ts`                 | Auto-generated route tree (do not edit)                     |
+| `src/components/ScrollIndicator.tsx`   | Live `scrollY` readout                                      |
+| `src/utils/scrollToTopOnNavigation.ts` | Optional workaround from strats.gg stash                    |
+| `src/components/TabSkeleton.tsx`       | Pending state skeleton                                      |
 
 ## Related strats.gg code
 
 - `apps/web/src/router.tsx` — `scrollRestoration: true`
 - `apps/web/src/routes/_header/valorant/profile.$profileId/route.tsx` — layout + tabs
-- `apps/web/src/routes/_header/valorant/profile.$profileId/_sync.tsx` — sync loader parent
 - `apps/web/src/routes/__root.tsx` — `stableScrollbarGutter`
